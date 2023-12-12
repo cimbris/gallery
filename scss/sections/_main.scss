@@ -1,0 +1,23 @@
+main{
+}
+.gallery {
+    padding-top: 16px;
+}
+.gallery__content {
+    display: flex;
+}
+.gallery__row {
+    width: 90%;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 32px;
+    column-gap: 16px;
+    
+}
+.gallery__item {
+    width: 250px;
+    height: 450px;
+    border: 2px solid pink;
+}

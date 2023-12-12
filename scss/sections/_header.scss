@@ -1,0 +1,43 @@
+.header {
+    padding-top: 32px;
+    background-color: #636262;
+    padding-bottom: 16px;
+}
+
+.header__content {
+    align-items: center;
+    display: flex   ;
+    justify-content: space-between;
+    padding-top: px;
+}
+.presets-list {
+    display: flex;
+    column-gap: 30px;
+}
+.presets-list__item { 
+    
+}
+.preset-btn {
+    background-color: rgb(172, 88, 88);
+}
+.preset-btn__img {
+}
+.form{
+    display: flex;
+    column-gap: 15px;
+}
+.form__submit{
+    height: 40px;
+    width: 50px;
+    background-color: rgb(200, 201, 200);
+    display: inline-block;
+    background-image: url(../../img/lypa.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.form__search{
+    height: 40px;
+    background-color: rgb(200, 201, 200);
+}
