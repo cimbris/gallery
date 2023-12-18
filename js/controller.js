@@ -32,3 +32,9 @@ view.render(await model.getData(basicValue));
 // слушаю отправку формы 
 view.elements.form.addEventListener('submit',startGallery);
 
+view.elements.presetBtn.forEach((button)=>{
+    button.addEventListener('click', () => {
+        view.elements.searchInput.value = button.dataset.value;
+        view.render(await model.getData(basicValue));
+    })
+})

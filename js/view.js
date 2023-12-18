@@ -9,6 +9,7 @@ export default class View{
         galleryList: document.querySelector('.gallery__row'),
         form: document.querySelector('.form'),
         galleryItem: document.querySelectorAll('.gallery__item'),
+        presetBtn: document.querySelectorAll('.preset-btn')
     }
 
     render(arrData){
@@ -25,4 +26,7 @@ export default class View{
         }
         
     }
+
+    
 }
+
