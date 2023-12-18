@@ -3,8 +3,6 @@ export default class Model{
 
     }
 
-    gallery = document.querySelectorAll('.gallery__item img')
-
     // запрос к серверу
     // добавлена обработка ошибок
     // ничего сверхнового, по сути тот же иф елс - но для ассинхронки
