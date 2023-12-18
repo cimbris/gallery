@@ -4,10 +4,31 @@ import View from './view.js';
 const model = new Model();
 const view = new View();
 
-view.elements.form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (view.elements.searchInput.value.trim().length > 0) {
-        const arrData = model.getData(view.elements.searchInput.value,view.elements.galleryItem);
-        // view.render(arrData);
+// в переменную сразу сохраняю значение инпута после загрузки страницы
+// само значение установлено в html через value
+const basicValue = view.elements.searchInput.value;
+
+
+// немного видоизменённая функция
+// изучи, вникни
+const startGallery = async (e) => {
+
+    e.preventDefault();
+
+    const searchValue = view.elements.searchInput.value.trim();
+
+    if (searchValue.length > 0) {
+
+        const arrData = await model.getData(searchValue);
+
+        view.render(arrData);
+
     }
-})
+}
+
+// вызываю рендер с данными из модели сразу после загрузки страницы
+view.render(await model.getData(basicValue));
+
+// слушаю отправку формы 
+view.elements.form.addEventListener('submit',startGallery);
+
