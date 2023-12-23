@@ -5,14 +5,14 @@ main{
 }
 .gallery__content {
     display: flex;
+    justify-content: center;
 }
 .gallery__row {
     width: 90%;
-    flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 32px;
+    row-gap: 16px;
     column-gap: 16px;
     
 }

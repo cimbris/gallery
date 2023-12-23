@@ -228,31 +228,31 @@ select:-webkit-autofill:focus {
   background-color: #636262;
   padding-bottom: 16px;
 }
-
-.header__content {
+@media (max-width: 714px) {
+  .header .container {
+    display: none;
+  }
+}
+.header .header__content {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding-top: px;
 }
-
-.presets-list {
+.header .presets-list {
   display: flex;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
-
-.preset-btn {
+.header .preset-btn {
   background-color: rgb(172, 88, 88);
 }
-
-.form {
+.header .form {
   display: flex;
   -moz-column-gap: 15px;
        column-gap: 15px;
 }
-
-.form__submit {
+.header .form__submit {
   height: 40px;
   width: 50px;
   background-color: rgb(200, 201, 200);
@@ -262,10 +262,63 @@ select:-webkit-autofill:focus {
   background-position: center;
   background-repeat: no-repeat;
 }
-
-.form__search {
+.header .form__search {
   height: 40px;
   background-color: rgb(200, 201, 200);
+}
+.header .burger {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+  transition: 300ms;
+}
+.header .burger__line {
+  width: 36px;
+  height: 4px;
+  background-color: white;
+  transition: transform 0.3s;
+}
+.header .burger.active {
+  transform: translateX(35%);
+}
+.header .burger.active .burger__line--first {
+  transform: rotate(45deg) translateY(14px);
+}
+.header .burger.active .burger__line--second {
+  transform: scale(0);
+}
+.header .burger.active .burger__line--third {
+  transform: rotate(-45deg) translateY(-14px);
+}
+.header .header__mobile-menu {
+  display: none;
+}
+.header .header__mobile-menu-list {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(27, 26, 23, 0.897);
+  transition: top 500ms ease-in-out;
+}
+.header .header__mobile-menu-list .header__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  row-gap: 64px;
+}
+.header .header__mobile-menu-list .header__menu .header__menu-link {
+  margin-right: 0;
+}
+.header .header__mobile-menu-list.active {
+  top: 0;
+  transition: top 500ms ease-in-out;
 }
 
 .gallery {
@@ -274,15 +327,15 @@ select:-webkit-autofill:focus {
 
 .gallery__content {
   display: flex;
+  justify-content: center;
 }
 
 .gallery__row {
   width: 90%;
-  flex-direction: row;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  row-gap: 32px;
+  row-gap: 16px;
   -moz-column-gap: 16px;
        column-gap: 16px;
 }

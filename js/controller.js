@@ -33,8 +33,13 @@ view.render(await model.getData(basicValue));
 view.elements.form.addEventListener('submit',startGallery);
 
 view.elements.presetBtn.forEach((button)=>{
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async() => {
         view.elements.searchInput.value = button.dataset.value;
         view.render(await model.getData(basicValue));
     })
+})
+
+view.elements.burger.addEventListener('click', () => {
+    view.burgerActive();
+    view.mobileMenuActive();
 })

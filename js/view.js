@@ -9,7 +9,9 @@ export default class View{
         galleryList: document.querySelector('.gallery__row'),
         form: document.querySelector('.form'),
         galleryItem: document.querySelectorAll('.gallery__item'),
-        presetBtn: document.querySelectorAll('.preset-btn')
+        presetBtn: document.querySelectorAll('.preset-btn'),
+        burger: document.querySelector('.burger'),
+        mobileMenu: document.querySelector('.header__mobile-menu-list'),
     }
 
     render(arrData){
@@ -26,7 +28,13 @@ export default class View{
         }
         
     }
-
+    
+    burgerActive(){
+        this.burger.classList.toggle('active');
+    }
+    mobileMenuActive(){
+        this.mobileMenu.classList.toggle('active');
+    }
     
 }
 
