@@ -16,9 +16,8 @@ export default class View{
 
     render(arrData){
         // вывод массива помле загрузки страницы
-        
+        this.clearRender(this.elements.galleryItem)        
         for(let i = 0; i < arrData.length; i++){
-            console.log(arrData[i].urls.regular);
         
             const newPic = `
             <div class="gallery__item"><img src="${arrData[i].urls.regular}" alt=""></div>
@@ -28,13 +27,20 @@ export default class View{
         }
         
     }
-    
+
+    clearRender(cards){        
+        
+        for(let i = 0; i < cards.length; i++){
+            cards[i].remove()
+        }
+        console.log(cards);
+    }
+
     burgerActive(){
-        this.burger.classList.toggle('active');
+        this.elements.burger.classList.toggle('active');
     }
     mobileMenuActive(){
-        this.mobileMenu.classList.toggle('active');
+        this.elements.mobileMenu.classList.toggle('active');
     }
-    
 }
 

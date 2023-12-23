@@ -32,13 +32,17 @@ view.render(await model.getData(basicValue));
 // слушаю отправку формы 
 view.elements.form.addEventListener('submit',startGallery);
 
+
+// preseti
 view.elements.presetBtn.forEach((button)=>{
     button.addEventListener('click', async() => {
+        view.elements.galleryItem = document.querySelectorAll('.gallery__item')
         view.elements.searchInput.value = button.dataset.value;
-        view.render(await model.getData(basicValue));
+        view.render(await model.getData(view.elements.searchInput.value));
     })
 })
 
+// burger
 view.elements.burger.addEventListener('click', () => {
     view.burgerActive();
     view.mobileMenuActive();
