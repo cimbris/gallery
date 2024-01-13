@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 ul, ul li {
-  list-style: none;
+  list-style-type: none;
 }
 
 img {
@@ -91,7 +91,7 @@ html {
 }
 
 body {
-  background-color: #272727;
+  background-color: #30312F;
   min-height: 100vh; /* sticky footer */
   display: flex; /* sticky footer */
   flex-direction: column; /* sticky footer */
@@ -225,7 +225,7 @@ select:-webkit-autofill:focus {
 
 .header {
   padding-top: 32px;
-  background-color: #636262;
+  background-color: #373A39;
   padding-bottom: 16px;
 }
 @media (max-width: 714px) {
@@ -233,79 +233,133 @@ select:-webkit-autofill:focus {
     display: none;
   }
 }
-.header .header__content {
+
+.header__content {
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding-top: px;
 }
-.header .presets-list {
+
+.presets-list {
   display: flex;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
-.header .preset-btn {
-  background-color: rgb(172, 88, 88);
+
+.preset-btn {
+  background-color: #E6E6E2;
+  transition: 300ms;
+  border-radius: 8% 92% 8% 92%/92% 8% 92% 8%;
 }
-.header .form {
+
+.preset-btn__img {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+}
+
+.preset-btn:hover {
+  background-color: #6EC1A9;
+  transition: 300ms;
+  border-radius: 92% 8% 92% 8%/8% 92% 8% 92%;
+  transform: scale(1.1);
+}
+
+.form {
   display: flex;
-  -moz-column-gap: 15px;
-       column-gap: 15px;
+  -moz-column-gap: 2px;
+       column-gap: 2px;
 }
-.header .form__submit {
+@media (max-width: 714px) {
+  .form {
+    display: flex;
+  }
+}
+
+.form__submit {
   height: 40px;
   width: 50px;
-  background-color: rgb(200, 201, 200);
+  background-color: #E6E6E2;
   display: inline-block;
   background-image: url(../../img/lypa.svg);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 26% 74% 68% 32%/47% 49% 51% 53%;
+  transition: 200ms;
 }
-.header .form__search {
+
+.form__submit:hover {
+  background-color: #6EC1A9;
+  transition: 200ms;
+}
+
+.form__search {
   height: 40px;
-  background-color: rgb(200, 201, 200);
+  background-color: #E6E6E2;
+  border-radius: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.header .burger {
+
+.burger {
   width: 36px;
   height: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 2;
+  position: relative;
+  z-index: 4;
   transition: 300ms;
+  background-color: transparent;
 }
-.header .burger__line {
+.burger:not(:last-child) {
+  margin-bottom: 1px;
+}
+
+.burger__line {
   width: 36px;
   height: 4px;
-  background-color: white;
+  background-color: rgb(200, 201, 200);
   transition: transform 0.3s;
 }
-.header .burger.active {
+
+.burger.active {
   transform: translateX(35%);
 }
-.header .burger.active .burger__line--first {
+.burger.active .burger__line--first {
   transform: rotate(45deg) translateY(14px);
 }
-.header .burger.active .burger__line--second {
+.burger.active .burger__line--second {
   transform: scale(0);
 }
-.header .burger.active .burger__line--third {
+.burger.active .burger__line--third {
   transform: rotate(-45deg) translateY(-14px);
 }
-.header .header__mobile-menu {
+
+.header__mobile-menu {
   display: none;
 }
-.header .header__mobile-menu-list {
+@media (max-width: 714px) {
+  .header__mobile-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+  }
+}
+
+.header__menu {
   position: fixed;
   top: -100%;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(27, 26, 23, 0.897);
-  transition: top 500ms ease-in-out;
+  transition: top 300ms ease-in-out;
 }
-.header .header__mobile-menu-list .header__menu {
+
+.header__mobile-menu-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -313,12 +367,15 @@ select:-webkit-autofill:focus {
   height: 100vh;
   row-gap: 64px;
 }
-.header .header__mobile-menu-list .header__menu .header__menu-link {
-  margin-right: 0;
-}
-.header .header__mobile-menu-list.active {
+
+.header__menu.active {
   top: 0;
   transition: top 500ms ease-in-out;
+}
+
+.mobile-menu__btn {
+  width: 20px;
+  height: 20px;
 }
 
 .gallery {
@@ -343,5 +400,5 @@ select:-webkit-autofill:focus {
 .gallery__item {
   max-width: 300px;
   min-height: 450px;
-  border: 2px solid pink;
+  border: 1px solid #6EC1A9;
 }/*# sourceMappingURL=main.css.map */

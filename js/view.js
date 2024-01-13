@@ -11,7 +11,7 @@ export default class View{
         galleryItem: document.querySelectorAll('.gallery__item'),
         presetBtn: document.querySelectorAll('.preset-btn'),
         burger: document.querySelector('.burger'),
-        mobileMenu: document.querySelector('.header__mobile-menu-list'),
+        mobileMenu: document.querySelector('.header__menu'),
     }
 
     render(arrData){

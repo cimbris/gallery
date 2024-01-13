@@ -39,6 +39,8 @@ view.elements.presetBtn.forEach((button)=>{
         view.elements.galleryItem = document.querySelectorAll('.gallery__item')
         view.elements.searchInput.value = button.dataset.value;
         view.render(await model.getData(view.elements.searchInput.value));
+        view.elements.burger.classList.toggle('active');
+        view.elements.mobileMenu.classList.toggle('active');
     })
 })
 
