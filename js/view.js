@@ -15,8 +15,10 @@ export default class View{
     }
 
     render(arrData){
+        
         // вывод массива помле загрузки страницы
-        this.clearRender(this.elements.galleryItem)        
+        this.clearRender(this.elements.galleryItem)   
+        console.log(this.elements.galleryItem);
         for(let i = 0; i < arrData.length; i++){
         
             const newPic = `
@@ -33,7 +35,6 @@ export default class View{
         for(let i = 0; i < cards.length; i++){
             cards[i].remove()
         }
-        console.log(cards);
     }
 
     burgerActive(){

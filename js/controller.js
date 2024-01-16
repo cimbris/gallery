@@ -15,6 +15,8 @@ const startGallery = async (e) => {
 
     e.preventDefault();
 
+    view.elements.galleryItem = document.querySelectorAll('.gallery__item');
+
     const searchValue = view.elements.searchInput.value.trim();
 
     if (searchValue.length > 0) {
